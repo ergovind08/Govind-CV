@@ -1,0 +1,64 @@
+"use client";
+
+import SectionHeading from "@/app/commons/components/elements/SectionHeading";
+import SectionSubHeading from "@/app/commons/components/elements/SectionSubHeading";
+import { BiLogoGithub } from "react-icons/bi";
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import GitHubCalendar from "react-github-calendar";
+import { Tooltip } from "@nextui-org/react";
+
+import { useTheme } from "next-themes";
+import useHasMounted from "@/app/commons/components/hooks/useHasMounted";
+import { GITHUB_ACCOUNTS } from "@/app/commons/constants/github";
+
+function GithubHeader() {
+  const { theme, setTheme } = useTheme();
+  const [loading, setLoading] = useState(false);
+  const mounted = useHasMounted();
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, [mounted]);
+
+  return (
+    <div className="space-y-6">
+      <div className="space-y-2">
+        <SectionHeading title="Github" icon={<BiLogoGithub size={24} />} />
+        <SectionSubHeading>
+          <p>My Github Contributions</p>
+          <Link href="https://github.com/ergovind08" target="_blank">
+            @ergovind08
+          </Link>
+        </SectionSubHeading>
+      </div>
+      <div className="p-2 bg-neutral-70 dark:bg-neutral-800 rounded flex justify-center items-center overflow-hidden mx-auto xl:w-[822px] md:w-[480px] lg:w-[750px] ">
+        <GitHubCalendar
+          username="ergovind08"
+          colorScheme={theme === "dark" ? "dark" : "light"}
+          blockMargin={2}
+          blockSize={14}
+          fontSize={12}
+          loading={loading ? true : false}
+          renderBlock={(block, activity) => (
+            <Tooltip
+              content={`${activity.count} activities on ${activity.date}`}
+              key={block}
+              closeDelay={50}
+              offset={10}
+              className="text-xs rounded-lg px-2"
+            >
+              {block}
+            </Tooltip>
+          )}
+          blockRadius={3}
+        />
+      </div>
+    </div>
+  );
+}
+
+export default GithubHeader;
