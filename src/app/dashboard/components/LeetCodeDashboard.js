@@ -86,7 +86,7 @@ const LeetCodeDashboard = ({ username }) => {
             <div className="space-y-4">
               {badges
                 .filter((badge) => badge.icon)
-                .slice(0, 3)
+                .slice(0, 2)
                 .map((badge) => (
                   <div
                     key={badge.id}
