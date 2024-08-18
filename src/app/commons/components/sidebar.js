@@ -15,8 +15,8 @@ export default function Sidebar() {
   const dropdown = useRef(null);
   const pathname = usePathname();
   const mounted = useHasMounted();
+
   useEffect(() => {
-    // only add the event listener when the dropdown is opened
     if (!isActive) return;
     function handleClick(event) {
       if (dropdown.current && !dropdown.current.contains(event.target)) {
@@ -24,7 +24,6 @@ export default function Sidebar() {
       }
     }
     window.addEventListener("click", handleClick);
-    // clean up
     return () => window.removeEventListener("click", handleClick);
   }, [isActive]);
 
@@ -32,24 +31,22 @@ export default function Sidebar() {
 
   return (
     <>
-      <div className="md:mt-9 mt-8">
+      <div className="mt-8 md:mt-9">
         <aside
-          class="lg:top-20   md:sticky fixed top-10 z-40 md:w-60 w-full md:py-5 py-0 h-fit  transition-all duration-500 ease-in-out md:flex bg-neutral-50 md:bg-transparent dark:bg-dark md:dark:bg-transparent border-b-2 dark:border-neutral-800 md:border-s-1 rounded-s-3xl justify-center"
+          className="fixed top-0 left-0 w-full md:w-60 z-40 md:sticky md:top-20 md:py-5 py-3 bg-neutral-50 md:bg-transparent dark:bg-dark md:dark:bg-transparent border-b-2 dark:border-neutral-800 md:border-s-1 rounded-s-3xl transition-all duration-500 ease-in-out"
           aria-label="Sidebar"
         >
-          <div class="md:p-4 p-0 overflow-y-auto rounded-xl w-full">
-            <div className="flex flex-row md:flex-col md:justify-center justify-between p-4 md:p-0">
+          <div className="overflow-y-auto md:p-4 p-2 w-full">
+            <div className="flex flex-row md:flex-col justify-between md:justify-center">
               <Me activeProps={isActive} />
               <div
-                className={`flex ${
-                  isActive ? "flex-col-reverse justify-between" : "flex-row"
-                }`}
+                className={`flex ${isActive ? "flex-col-reverse" : "flex-row"}`}
               >
                 <div className="relative w-full">
                   <div
-                    className={`absolute md:right-1 md:-top-[148px] right-4 ${
-                      isActive ? "-top-10" : "top-1"
-                    } `}
+                    className={`absolute md:right-1 right-4 md:-top-[148px] ${
+                      isActive ? "top-10" : "top-1"
+                    }`}
                   >
                     <ThemeSwitcher />
                   </div>
@@ -62,11 +59,9 @@ export default function Sidebar() {
                     aria-label="btn-activator"
                     ref={dropdown}
                     className={`flex-col ${
-                      isActive ? "space-y-1.5 " : "space-y-1"
-                    } justify-center relative top-1 right-0 items-center flex md:hidden p-2 transition-all duration-500 ease-in-out`}
-                    onClick={() => {
-                      setIsActive(!isActive);
-                    }}
+                      isActive ? "space-y-1.5" : "space-y-1"
+                    } items-center p-2 transition-all duration-500 ease-in-out md:hidden`}
+                    onClick={() => setIsActive(!isActive)}
                   >
                     <span
                       className={`hamburger-list ${
@@ -88,7 +83,7 @@ export default function Sidebar() {
               </div>
             </div>
             <nav
-              className={`transition-all duration-500 ease-in-out md:flex flex-col p-4 md:p-0 h-screen md:h-auto  ${
+              className={`transition-all duration-500 ease-in-out md:flex flex-col p-4 md:p-0 h-screen md:h-auto ${
                 isActive ? "flex" : "hidden"
               }`}
             >
@@ -99,7 +94,7 @@ export default function Sidebar() {
                     key={name}
                     className={`${
                       pathname === link ? "bg-sky-300/50 dark:bg-sky-950" : ""
-                    } shadow-xl rounded-lg text-dark dark:text-neutral-100 group hover:scale-100 md:hover:scale-105  hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-all duration-500 ease-in-out  `}
+                    } shadow-xl rounded-lg text-dark dark:text-neutral-100 group hover:scale-100 md:hover:scale-105 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-all duration-500 ease-in-out`}
                   >
                     <Link
                       href={link}
@@ -111,10 +106,7 @@ export default function Sidebar() {
                 ))}
               </ul>
             </nav>
-            <Divider
-              orientation="horizontal"
-              className="my-4 md:flex hidden "
-            />
+            <Divider orientation="horizontal" className="my-4 hidden md:flex" />
             <Copyright />
           </div>
         </aside>

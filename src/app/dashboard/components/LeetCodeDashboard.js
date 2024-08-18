@@ -26,7 +26,7 @@ const LeetCodeDashboard = ({ username }) => {
       } catch (error) {
         console.error("Error fetching LeetCode data:", error);
         setError("Failed to load data. Please try again later.");
-        setLoading(false); // Ensure loading is set to false in case of error
+        setLoading(false);
       }
     };
 
@@ -55,67 +55,26 @@ const LeetCodeDashboard = ({ username }) => {
   if (!leetcodeData || !badgesData)
     return <p className="text-center text-gray-500">No data available</p>;
 
-  const { name, birthday, avatar, ranking, reputation, school, progress } =
-    leetcodeData;
+  const { name, birthday, avatar, school, progress } = leetcodeData;
 
-  const { badges, upcomingBadges, activeBadge } = badgesData;
+  const { badges, activeBadge } = badgesData;
 
   return (
     <>
-      <h1 className=" text-xl text-gray-600  mb-3">LeetCode Dashboard</h1>
-      <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden">
-        {/* Profile Header */}
-        <div className="p-6 bg-gray-200 dark:bg-neutral-900 text-gray-900 dark:text-gray-100 flex items-center">
-          <div className="flex-shrink-0">
-            <img
-              src={avatar}
-              alt="Profile"
-              className="w-24 h-24 rounded-full border-4 border-gray-300 dark:border-gray-500"
-            />
-          </div>
-          <div className="ml-6">
-            <h1 className="text-xl font-bold">{name}</h1>
-            <p className="text-sm">
-              <span className="text-green-600">Username:</span> incorelang
-            </p>
-            <p className="text-sm">
-              <span className="text-green-600">DOB:</span> {birthday}
-            </p>
-            <p className="text-sm">
-              <span className="text-green-600">Institution:</span> {school}
-            </p>
-          </div>
-        </div>
+      <h1 className="text-xl mb-3">LeetCode Badges</h1>
+      <div className="max-w-4xl mx-auto dark:bg-dark rounded-lg overflow-hidden">
+        <div className="dark:bg-dark text-gray-900 dark:text-gray-100 flex items-center"></div>
         <div>
-          {/* Progress Bar Card */}
-          <div className="bg-gray-50 dark:bg-gray-900 p-1 rounded-lg shadow-md">
-            {progress &&
-              progress.map((item) => (
-                <div key={item.difficulty} className="mb-4">
-                  <p className="text-lg mb-2">
-                    <strong>{item.difficulty} Problems Solved:</strong>
-                  </p>
-                  <ProgressBar
-                    now={item.percentage}
-                    label={`${item.percentage}%`}
-                    variant="success"
-                  />
-                </div>
-              ))}
-          </div>
-
-          {/* Active Badge Card */}
-          <div className=" dark:bg-gray-900 p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold mb-4">Active Badge</h3>
+          <div className="dark:bg-dark p-3 rounded-lg">
             {activeBadge && (
-              <div className="flex items-center">
+              <div className="flex items-center mb-4 border border-gray-300 dark:border-gray-700 rounded-lg p-4">
                 <img
                   src={activeBadge.icon}
                   alt={activeBadge.displayName}
                   className="w-16 h-16 mr-4"
                 />
                 <div>
-                  <p className="text-lg font-semibold">
+                  <p className="text-sm font-semibold">
                     {activeBadge.displayName}
                   </p>
                   <p className="text-gray-500 dark:text-gray-400">
@@ -124,33 +83,33 @@ const LeetCodeDashboard = ({ username }) => {
                 </div>
               </div>
             )}
+            <div className="space-y-4">
+              {badges
+                .filter((badge) => badge.icon)
+                .slice(0, 3)
+                .map((badge) => (
+                  <div
+                    key={badge.id}
+                    className="bg-white dark:bg-dark p-4 border border-gray-300 dark:border-gray-700 rounded-lg shadow-md flex items-center"
+                  >
+                    <img
+                      src={badge.icon}
+                      alt={badge.displayName}
+                      className="w-12 h-12 mr-4"
+                    />
+                    <div>
+                      <p className="text-lg font-semibold">
+                        {badge.displayName}
+                      </p>
+                      <p className="text-gray-500 dark:text-gray-400 text-sm">
+                        Earned on: {badge.creationDate}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+            </div>
           </div>
         </div>
-
-        {/* Badges Section */}
-        <div className="p-2 bg-gray-100 dark:bg-gray-800">
-          <h2 className="text-lg font-semibold mb-4">Badges Earned</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
-            {badges.map((badge) => (
-              <div
-                key={badge.id}
-                className="bg-white dark:bg-gray-900 p-4 rounded-lg shadow-md text-center"
-              >
-                <img
-                  src={badge.icon}
-                  alt={badge.displayName}
-                  className="w-12 h-12 mx-auto mb-4"
-                />
-                <p className="text-lg font-semibold">{badge.displayName}</p>
-                <p className="text-gray-500 dark:text-gray-400 text-sm">
-                  Earned on: {badge.creationDate}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Upcoming Badges Section */}
       </div>
     </>
   );
