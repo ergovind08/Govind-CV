@@ -98,7 +98,7 @@ const LeetCodeDashboard = ({ username }) => {
                       className="w-12 h-12 mr-4"
                     />
                     <div>
-                      <p className="text-lg font-semibold">
+                      <p className="text-sm font-semibold">
                         {badge.displayName}
                       </p>
                       <p className="text-gray-500 dark:text-gray-400 text-sm">
