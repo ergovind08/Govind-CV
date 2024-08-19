@@ -15,7 +15,7 @@ export default function Index() {
         <Divider orientation="horizontal" className="mt-6 mb-4" />
         <Education />
         <Divider orientation="horizontal" className="mt-9 mb-4" />
-        <SwiperCertificate />
+        {/* <SwiperCertificate /> */}
       </div>
     </ContainerAOS>
   );

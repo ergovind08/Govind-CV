@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import useHasMounted from "@/app/commons/components/hooks/useHasMounted";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -40,10 +40,12 @@ export default function CertificatesCard({
             </motion.div>
 
             <div className="flex flex-col items-start sm:justify-start justify-center sm:text-start ">
-              <h1 className="text-lg font-medium sm:w-64 w-72 sm:line-clamp-none line-clamp-1 sm:mx-0 mx-auto">
+              <h1 className="text-md text-cyan-600 font-medium sm:w-64 w-72 sm:line-clamp-none line-clamp-1 sm:mx-0 mx-auto">
                 {title}
               </h1>
-              <p className="text-sm sm:w-64 w-60 line-clamp-2 sm:mx-0 mx-auto">{description}</p>
+              <p className="text-sm sm:w-64 w-60 line-clamp-2 sm:mx-0 mx-auto">
+                {description}
+              </p>
             </div>
           </div>
         </div>

@@ -35,9 +35,9 @@ export default function Certificates() {
           );
         })}
       </div>
-      {/* <div className="">
+      <div className="">
         <SwiperCertificate />
-      </div> */}
+      </div>
     </div>
   );
 }

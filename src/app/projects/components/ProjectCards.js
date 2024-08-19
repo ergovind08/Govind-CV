@@ -24,9 +24,10 @@ export default function ProjectsCards({
       <Link key={Index} href={`/projects/${slug}`}>
         <div className="rounded-xl transition-all duration-300 shadow-sm lg:hover:shadow-md relative border dark:bg-neutral-800 border-neutral-200 dark:border-neutral-800 lg:hover:scale-[102%] h-full cursor-pointer group">
           {is_featured && (
-            <div className="rounded-tr-xl rounded-bl-xl bg-green-400 px-2 py-1 right-0 absolute text-xs text-center z-[2] text-neutral-700">
+            <div className="rounded-tr-xl rounded-bl-xl bg-cyan-600 px-2 py-1 right-0 absolute text-xs text-center z-[2] text-neutral-700">
               <div className="flex gap-1 items-center">
-                <BiPin size={18} className="rotate-[20deg]" /> Featured
+                <BiPin size={18} className=" text-dark rotate-[20deg]" />{" "}
+                <span className="text-dark">Featured</span>
               </div>
             </div>
           )}
@@ -53,7 +54,9 @@ export default function ProjectsCards({
               </motion.div>
             </div>
             <div className="px-5 py-6 space-y-3 ">
-              <h1 className="text-xl group-hover:text-teal-500 transition-all duration-300">{title}</h1>
+              <h1 className="text-xl group-hover:text-teal-500 transition-all duration-300">
+                {title}
+              </h1>
               <p className="line-clamp-2 text-sm">{description}</p>
               <div className="flex gap-2 pt-2">
                 {tech_stack.map((children) => {
