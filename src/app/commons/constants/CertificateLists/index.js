@@ -31,4 +31,27 @@ export const CERTIFICATELISTS = [
     by: "Amazon",
     slug: "aws-practitioner",
   },
+  {
+    title: "Rest-API",
+    image: "/rest-api.jpg",
+    description:
+      "Successfully Passed the REST API Assessment on HackerRank! 🎉 Out of 2 Question I was able to solve both of the questions",
+    diberikan: "Aug 20, 2024",
+    berlaku: "October 19, 2036",
+
+    by: "Hacker Rank",
+    slug: "rest-api",
+  },
+
+  {
+    title: "SQL Advance",
+    image: "/sql.jpg",
+    description:
+      "🎉  I successfully completed a SQL assessment on HackerRank! Out of 2 challenging questions, I was able to solve 1 question.",
+    diberikan: "Aug 20, 2024",
+    berlaku: "October 19, 2036",
+
+    by: "Hacker Rank",
+    slug: "sql-advance",
+  },
 ];
