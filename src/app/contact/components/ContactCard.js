@@ -5,7 +5,7 @@ import React from "react";
 function ContactCard() {
   return (
     <div className="space-y-2 flex flex-col">
-      <h1>Find me on</h1>
+      <h1>Social Handle : </h1>
       <div className="flex gap-2 flex-col lg:flex-row justify-center lg:justify-start items-center ">
         {CONTACTLIST.map((item, index) => {
           return (
