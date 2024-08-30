@@ -54,4 +54,15 @@ export const CERTIFICATELISTS = [
     by: "Hacker Rank",
     slug: "sql-advance",
   },
+  {
+    title: "Certified React Developer",
+    image: "https://res.cloudinary.com/dhmwfkfsi/image/upload/v1725055688/my%20img/ukco66dmade0limmxago.png",
+    description:
+      "🎉  I successfully completed a React assessment on HackerRank! Out of 2 challenging questions, I was able to solve 1 question.",
+    diberikan: "Aug 31, 2024",
+    berlaku: "October 19, 2036",
+
+    by: "Hacker Rank",
+    slug: "React",
+  },
 ];
