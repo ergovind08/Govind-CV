@@ -17,7 +17,7 @@ const sora = Sora({
 });
 
 export const metadata = {
-  title: 'Govind Jha | Portfolio Website',
+  title: 'govind jha portfolio',
   description: 'Hello ! , this is Govind Jha I am full Stack Software DevOps Engineer, also enthusiastic AI Application developer',
   keywords: 'Govind Jha Portfolio,Jha Govind Vaibhav Gopalkrishna ,  Software developer in Kolkata',
   creator: 'Govind Jha',
