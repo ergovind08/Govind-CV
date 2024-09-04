@@ -17,8 +17,8 @@ const sora = Sora({
 });
 
 export const metadata = {
-  title: 'Home | Govind',
-  description: 'Personal website,portfolio, roadmap, and more',
+  title: 'Govind Jha | Portfolio App',
+  description: 'Hello ! , this is Govind Jha I am full Stack Software DevOps Engineer, also enthusiastic AI Application developer',
   keywords: 'Govind Jha Portfolio, Software developer in Kolkata',
   creator: 'Govind Jha',
   openGraph: {
