@@ -18,13 +18,13 @@ const sora = Sora({
 
 export const metadata = {
   title: 'Home | Govind',
-  description: 'Personal website, portfolio, roadmap, and more',
+  description: 'Personal website,portfolio, roadmap, and more',
   keywords: 'Govind Jha Portfolio, Software developer in Kolkata',
   creator: 'Govind Jha',
   openGraph: {
-    title: 'Govind - Personal Website',
+    title: 'Govind Jha Portfolio Website',
     description: 'Personal website, portfolio, roadmap, and more of Govind',
-    url: 'https://yourdomain.com',
+    url: 'https://govindcv.me',
     siteName: 'Govind',
     locale: 'id_ID',
     type: 'website',
