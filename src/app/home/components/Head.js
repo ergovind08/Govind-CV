@@ -28,7 +28,7 @@ export default function HeaderHome() {
         </p>
       </div>
       <Link
-        href="/Govind_Resume.pdf"
+        href="/myResume.pdf"
         className="py-2 px-2 bg-neutral-600 hover:bg-neutral-700 text-neutral-200 rounded-lg "
       >
         Check CV <span className="">📂</span>
