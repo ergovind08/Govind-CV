@@ -3,6 +3,18 @@ import { BiQuestionMark } from "react-icons/bi";
 const ICON_SIZE = "30";
 export const CareerLists = [
   {
+    position: "SDE Intern",
+    company: "Caravel Labs",
+    logo: "/Physics_wallah_logo.jpg",
+    location: "Seattle, Washington",
+    location_type: "Hybrid",
+    type: "Internship",
+    start_date: "2024-09",
+    end_date: null,
+    industry: "Software",
+    
+  },
+  {
     position: "Problem Solver",
     company: "Physics Wallah",
     logo: "/Physics_wallah_logo.jpg",
@@ -11,7 +23,7 @@ export const CareerLists = [
     type: "Fulltime",
     start_date: "2024-05",
     end_date: null,
-    industry: "wellness",
+    industry: "Education",
     // link: "https://tmint.co/",
   },
   {
