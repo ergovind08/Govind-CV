@@ -5,7 +5,7 @@ export const CareerLists = [
   {
     position: "SDE Intern",
     company: "Caravel Labs",
-    logo: "/Physics_wallah_logo.jpg",
+    logo: "/caravellabs_logo.jpeg",
     location: "Seattle, Washington",
     location_type: "Hybrid",
     type: "Internship",
